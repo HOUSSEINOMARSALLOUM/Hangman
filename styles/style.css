@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #5d63b9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.game {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  gap: 20px;
+}
+
+.hangman {
+  flex: 1;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+}
+
+.inputs-container {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hang {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letters {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(calc(100% / 7) - 10px);
+  max-width: 60px;
+  aspect-ratio: 1;
+  font-size: clamp(16px, 4vw, 30px);
+  background-color: #5d63b9;
+  color: aliceblue;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.answer-section {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: clamp(20px, 5vw, 35px);
+  font-weight: bold;
+}
+
+.answer-section > span {
+  padding: 0 5px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.pressed {
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hangman {
+    width: 100%;
+  }
+
+  .inputs-container {
+    width: 100%;
+  }
+
+  .letter {
+    width: calc(calc(100% / 6) - 10px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game {
+    padding: 10px;
+  }
+
+  .letter {
+    width: calc(calc(100% / 4) - 10px);
+  }
+
+  .hang {
+    height: 200px;
+  }
+}
